@@ -9,7 +9,7 @@
 
 In this repository you will find a pattern-matching implementation as explained in [Efficient String Matching: An Aid to Bibliographic Search](http://cr.yp.to/bib/1975/aho.pdf). testCall.py containts a sample call and run of the algorithm (e.g `./testCall.py`).
 
-* Tested on python2.7 and python 3.5
+* Tested on python2.7 and python3.5
 
 #### Use AhoCorasick in other projects
 
