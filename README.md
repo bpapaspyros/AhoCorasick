@@ -16,8 +16,8 @@ In this repository you will find a pattern-matching implementation as explained 
 ```python
 from AhoCorasick import AhoCorasick
                     ...
-    patterns = ... # comma separated, no spaces (unless part of text)
-    text     = ...
+    patterns = ... # you should provide a list of strings here
+    text     = ... # a single string
                     ...
     ac = AhoCorasick(paterns, text)
     ac.run()
