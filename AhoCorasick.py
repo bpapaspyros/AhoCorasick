@@ -30,7 +30,7 @@ class AhoCorasick:
         self.g = {}
         self.f = {}
         self.output = {}
-        self.occurances = {}
+        self.occurences = {}
         self.comparisons = 0
         self.skipcount = 0
 
@@ -54,7 +54,7 @@ class AhoCorasick:
             if state in self.output:
                 l = list(self.output[state])
                 for p in l:
-                    self.occurances[p] += 1 # updating the occurrence counter
+                    self.occurences[p] += 1 # updating the occurrence counter
 
             self.comparisons += 1 # updating the comparison counter
         return
@@ -81,7 +81,7 @@ class AhoCorasick:
             self.output[state] = [str(pattern)]
 
             # initializing the occurrence dictionary for later use
-            self.occurances[pattern] = 0
+            self.occurences[pattern] = 0
 
         # when in state 0 every non existent transition returns to 0
         for pattern in patterns:
@@ -120,8 +120,8 @@ class AhoCorasick:
                             self.output[s] = list(set(self.output[s]))
         return
 
-    def getPatternOccurances(self):
-        return self.occurances
+    def getPatternOccurences(self):
+        return self.occurences
 
     def getComparisons(self):
         return self.comparisons
@@ -133,5 +133,5 @@ class AhoCorasick:
         print('\n\t ---------------------- \n')
         print('- Skip count         : ' + str(self.skipcount))
         print('- Comparisons counted: ' + str(self.comparisons))
-        print('- Pattern occurrences : ' + str(self.occurances))
+        print('- Pattern occurrences : ' + str(self.occurences))
         print('\n')
