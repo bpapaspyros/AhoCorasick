@@ -39,7 +39,6 @@ class AhoCorasick:
         self._goto(self.patterns)
         self._failure()
         self._match()
-        return
 
     # actual searching/matching
     def _match(self):
@@ -57,7 +56,6 @@ class AhoCorasick:
                     self.occurences[p] += 1 # updating the occurrence counter
 
             self.comparisons += 1 # updating the comparison counter
-        return
 
     # builds the "tree" for the given patterns
     def _goto(self, patterns):
@@ -88,7 +86,6 @@ class AhoCorasick:
             for p in range(len(pattern)):
                 if not (0, pattern[p]) in self.g:
                     self.g[(0, pattern[p])] = 0
-        return
 
     # builds the failure transitions
     def _failure(self):
@@ -118,7 +115,6 @@ class AhoCorasick:
                     if s and self.f[s] in self.output:
                             self.output[s] += self.output[self.f[s]]
                             self.output[s] = list(set(self.output[s]))
-        return
 
     def getPatternOccurences(self):
         return self.occurences
